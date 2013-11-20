@@ -10,6 +10,15 @@
             margin: 0px;
             padding: 0px
         }
+        body {font-family: Arial, sans-serif}
+        #legend {
+            padding: 10px 20px;
+            background: white;
+            z-index: 1;
+            position: absolute;
+            top:10px;
+            left:150px;
+            }
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1KA1rMByJDny0VixwGjjFPmk_C5I7TnQ&v=3.exp&sensor=false"></script>
     <script>
@@ -22,10 +31,13 @@
             };
             map = new google.maps.Map(document.getElementById('map-canvas'),
                     mapOptions);
+            /*
             google.maps.event.addListener(map, 'click', function(event) {
+
                 map.setCenter(event.latLng);
                 alert('Center: '+event.latLng.lat()+','+event.latLng.lng())
             });
+            */
         }
 
         google.maps.event.addDomListener(window, 'load', initialize);
@@ -35,6 +47,11 @@
     </script>
 </head>
 <body>
+<div id='legend'><h2>Czułeś smród?</h2>
+<p>
+Kliknij w miejscu gdzie go czułeś i zapisz
+</p>
+</div>
 <div id="map-canvas"></div>
 </body>
 </html>

@@ -31,13 +31,20 @@
             };
             map = new google.maps.Map(document.getElementById('map-canvas'),
                     mapOptions);
-            /*
-            google.maps.event.addListener(map, 'click', function(event) {
 
-                map.setCenter(event.latLng);
-                alert('Center: '+event.latLng.lat()+','+event.latLng.lng())
+            google.maps.event.addListener(map, 'click', function(event) {
+                placeMarker(event.latLng);
             });
-            */
+
+
+        }
+        var marker
+        function placeMarker(location) {
+            marker = new google.maps.Marker({
+                position: location,
+                draggable:true,
+                map: map
+            });
         }
 
         google.maps.event.addDomListener(window, 'load', initialize);

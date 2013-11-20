@@ -1,3 +1,5 @@
+.idea
+config/database.yml
 *.rbc
 *.sassc
 .sass-cache

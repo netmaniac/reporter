@@ -14,10 +14,11 @@
 ActiveRecord::Schema.define(version: 20131120230538) do
 
   create_table "stink_reports", force: true do |t|
-    t.float    "lat"
-    t.float    "lng"
+    t.decimal  "lat",        precision: 20, scale: 17, default: 0.0
+    t.decimal  "lng",        precision: 20, scale: 17, default: 0.0
     t.string   "email"
-    t.datetime "seen_on"
+    t.date     "seen_on"
+    t.string   "token"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

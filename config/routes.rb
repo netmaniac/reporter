@@ -4,7 +4,10 @@ Reporter::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'map#show'
+  root 'map#show'
+
+  get 'form/:lat/:lng' => 'map#get_form', constraints: {lat:/[0-9\.]+/, lng: /[0-9\.]+/ }
+  post 'form' => 'map#store'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

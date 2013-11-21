@@ -1,3 +1,28 @@
 // Place all the styles related to the map controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html, body, #map-canvas {
+  height: 100%;
+  margin: 0px;
+  padding: 0px
+}
+
+body {
+  font-family: Arial, sans-serif
+}
+
+#legend {
+  padding: 10px 10px;
+  background: white;
+  z-index: 1;
+  position: absolute;
+  top: 10px;
+  left: 120px;
+  width: 250px;
+  font-size: 0.8em;
+}
+
+#stink_form {
+  min-height: 100px;
+
+}

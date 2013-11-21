@@ -1,0 +1,13 @@
+#stink_form
+  = form_tag form_path, :method => :post do
+    Kiedy?
+    = text_field_tag :date
+    %br/
+    Godziny:
+    = select_tag :hours, options_for_select(StinkReport::HOURS)
+    %br/
+    Email:
+    = text_field_tag :date
+    %br/
+    = submit_tag 'Zgłaszam'
+

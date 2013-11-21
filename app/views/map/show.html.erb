@@ -1,65 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Simple Map</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <style>
-        html, body, #map-canvas {
-            height: 100%;
-            margin: 0px;
-            padding: 0px
-        }
-        body {font-family: Arial, sans-serif}
-        #legend {
-            padding: 10px 20px;
-            background: white;
-            z-index: 1;
-            position: absolute;
-            top:10px;
-            left:150px;
-            }
-    </style>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1KA1rMByJDny0VixwGjjFPmk_C5I7TnQ&v=3.exp&sensor=false"></script>
-    <script>
-        var map;
-        function initialize() {
-            var mapOptions = {
-                zoom: 15,
-                mapTypeId: google.maps.MapTypeId.HYBRID,
-                center: new google.maps.LatLng(52.28147059389942,20.88599681854248)
-            };
-            map = new google.maps.Map(document.getElementById('map-canvas'),
-                    mapOptions);
-
-            google.maps.event.addListener(map, 'click', function(event) {
-                placeMarker(event.latLng);
-            });
-
-
-        }
-        var marker
-        function placeMarker(location) {
-            marker = new google.maps.Marker({
-                position: location,
-                draggable:true,
-                map: map
-            });
-        }
-
-        google.maps.event.addDomListener(window, 'load', initialize);
-
-
-
-    </script>
-</head>
-<body>
 <div id='legend'><h2>Czułeś smród?</h2>
 <p>
-Kliknij w miejscu gdzie go czułeś i zapisz
+Kliknij w miejscu gdzie go czułeś (jeżeli potrzeba przesuń znacznik i zmień skalę mapy), podaj datę i swój email.
+Będziesz musiał potwierdzić zgłoszenie, więc podaj email z którego odbierasz pocztę.
 </p>
 </div>
 <div id="map-canvas"></div>
-</body>
-</html>
 

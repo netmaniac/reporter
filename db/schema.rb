@@ -19,8 +19,12 @@ ActiveRecord::Schema.define(version: 20131120230538) do
     t.string   "email"
     t.date     "seen_on"
     t.string   "token"
+    t.string   "hours"
+    t.boolean  "confirmed",                            default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "stink_reports", ["confirmed"], name: "index_stink_reports_on_confirmed", using: :btree
 
 end

@@ -6,8 +6,12 @@ class CreateStinkReports < ActiveRecord::Migration
       t.string :email
       t.date :seen_on
       t.string :token
+      t.string :hours
+      t.boolean :confirmed, default: false, null: false
 
       t.timestamps
     end
+
+    add_index :stink_reports, :confirmed
   end
 end

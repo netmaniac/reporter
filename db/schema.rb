@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131120230538) do
+ActiveRecord::Schema.define(version: 20131123141055) do
 
-  create_table "stink_reports", force: true do |t|
+  create_table "reports", force: true do |t|
     t.decimal  "lat",        precision: 20, scale: 17, default: 0.0
     t.decimal  "lng",        precision: 20, scale: 17, default: 0.0
     t.string   "email"
@@ -25,6 +25,6 @@ ActiveRecord::Schema.define(version: 20131120230538) do
     t.datetime "updated_at"
   end
 
-  add_index "stink_reports", ["confirmed"], name: "index_stink_reports_on_confirmed", using: :btree
+  add_index "reports", ["confirmed"], name: "index_reports_on_confirmed", using: :btree
 
 end

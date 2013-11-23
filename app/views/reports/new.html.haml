@@ -1,0 +1,13 @@
+#stink_form
+  = form_for @report do |f|
+    Kiedy?
+    = f.text_field :seen_on
+    %br/
+    Godziny:
+    = select_tag :hours, options_for_select(Report::HOURS)
+    %br/
+    Email:
+    = text_field_tag :email
+    %br/
+    = submit_tag 'Zgłaszam'
+

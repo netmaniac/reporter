@@ -4,7 +4,6 @@ class MapController < ApplicationController
   end
 
   def get_form
-    render layout: false
   end
 
   def store
@@ -18,6 +17,10 @@ class MapController < ApplicationController
       flash[:notice] = 'Zgłoszenie przyjęte, czekaj na email z potwierdzeniem'
     else
     end
+  end
+
+  def stored
+
     render template: 'no_map'
   end
 end

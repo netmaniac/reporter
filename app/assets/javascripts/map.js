@@ -20,11 +20,11 @@ function initialize() {
 var marker = null
 var infowindow = new google.maps.InfoWindow();
 google.maps.event.addListener(infowindow, 'domready', function(event){
-    $( "#date" ).datepicker({ altFormat: "yy-mm-dd",altField: '#date'});
+    $( "#report_seen_on" ).datepicker({ altFormat: "yy-mm-dd",altField: '#report_seen_on'});
 })
 function load_content(marker, latLng){
     $.ajax({
-        url: '/form/'+latLng.lat()+'/'+latLng.lng(),
+        url: '/reports/new/'+latLng.lat()+'/'+latLng.lng(),
         success: function(data){
             infowindow.setContent(data);
             infowindow.open(map, marker);

@@ -1,4 +1,9 @@
 Reporter::Application.routes.draw do
+  resources :reports, except: :new do
+    collection do
+      get 'new/:lat/:lng', action: 'new', constraints: {lat:/[0-9\.]+/, lng: /[0-9\.]+/ }
+    end
+  end
   get "map/show"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -8,7 +13,6 @@ Reporter::Application.routes.draw do
 
   get 'form/:lat/:lng' => 'map#get_form', constraints: {lat:/[0-9\.]+/, lng: /[0-9\.]+/ }
   post 'form' => 'map#store'
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

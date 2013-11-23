@@ -1,1 +1,9 @@
-%h2 Zgłoszenie
+.text
+  .grid_4.prefix_4.suffix_4
+    %h2 Zgłoszenie zostało zapisane
+  .grid_1.prefix_4
+    %p
+      Data
+  .grid_3.suffix_4
+    %p
+      = @stink_report.date.to_s(:polish)

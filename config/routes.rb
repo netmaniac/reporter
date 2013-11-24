@@ -1,7 +1,7 @@
 Reporter::Application.routes.draw do
-  resources :reports, except: :new do
+  resources :reports do
     collection do
-      get 'new/:lat/:lng', action: 'new', constraints: {lat:/[0-9\.]+/, lng: /[0-9\.]+/ }
+      #get 'new/:lat/:lng', action: 'new', constraints: {lat:/[0-9\.]+/, lng: /[0-9\.]+/ }
     end
   end
   get "map/show"

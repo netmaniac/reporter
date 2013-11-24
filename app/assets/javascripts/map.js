@@ -24,10 +24,13 @@ google.maps.event.addListener(infowindow, 'domready', function(event){
 })
 function load_content(marker, latLng){
     $.ajax({
-        url: '/reports/new/'+latLng.lat()+'/'+latLng.lng(),
+        url: '/reports/new',
         success: function(data){
             infowindow.setContent(data);
             infowindow.open(map, marker);
+            alert(latLng.lat()+', '+latLng.lng())
+            $('#report_lat').val(latLng.lat())
+            $('#report_lng').val(latLng.lng())
         }
     });
 }

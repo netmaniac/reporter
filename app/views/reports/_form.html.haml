@@ -1,0 +1,32 @@
+#form_errors
+  - unless @report.valid?
+    - @report.errors.full_messages.each do |e|
+      .grid_6.prefix_3.suffix_3
+        = e
+
+#stink_form
+  = form_for @report do |f|
+    = f.hidden_field :lat
+    = f.hidden_field :lng
+    .grid_2.prefix_3
+      %p
+        Kiedy?
+    .grid_4.suffix_3
+      %p
+        = f.text_field :seen_on
+    .grid_2.prefix_3
+      %p
+        Godziny:
+    .grid_4.suffix_3
+      %p
+        = f.select :hours, options_for_select(Report::HOURS)
+    .grid_2.prefix_3
+      %p
+        Email:
+    .grid_4.suffix_3
+      %p
+        = f.text_field :email
+    .grid_4.prefix_4
+      %p
+        = submit_tag 'Zgłaszam'
+

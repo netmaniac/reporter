@@ -11,18 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131123141055) do
+ActiveRecord::Schema.define(version: 20131124214627) do
 
   create_table "reports", force: true do |t|
-    t.decimal  "lat",        precision: 20, scale: 17, default: 0.0
-    t.decimal  "lng",        precision: 20, scale: 17, default: 0.0
+    t.decimal  "lat",           precision: 20, scale: 17, default: 0.0
+    t.decimal  "lng",           precision: 20, scale: 17, default: 0.0
     t.string   "email"
     t.date     "seen_on"
     t.string   "token"
     t.string   "hours"
-    t.boolean  "confirmed",                            default: false, null: false
+    t.boolean  "confirmed",                               default: false, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "session_token"
   end
 
   add_index "reports", ["confirmed"], name: "index_reports_on_confirmed", using: :btree

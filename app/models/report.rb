@@ -10,12 +10,14 @@ class Report < ActiveRecord::Base
       'noc 21:00-23:59'
   ]
 
-  before_create :set_defaults
+  #before_create :set_defaults
 
+  validates_presence_of :email
+  validates_uniqueness_of :session_token, scope: :email
 
   private
-  def initialize
-    super
+  def initialize(opts = nil)
+    super(opts)
     self.seen_on = Date.today
   end
 end

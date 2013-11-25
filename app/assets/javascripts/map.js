@@ -28,7 +28,7 @@ function load_content(marker, latLng){
         success: function(data){
             infowindow.setContent(data);
             infowindow.open(map, marker);
-            alert(latLng.lat()+', '+latLng.lng())
+//            alert(latLng.lat()+', '+latLng.lng())
             $('#report_lat').val(latLng.lat())
             $('#report_lng').val(latLng.lng())
         }

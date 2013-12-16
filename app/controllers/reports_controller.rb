@@ -5,6 +5,7 @@ class ReportsController < ApplicationController
   def show
     @report = Report.find(params[:id])
     redirect_to '/' unless @report.token == params[:token]
+    render layout: 'small_map'
   end
 
   def edit

@@ -26,15 +26,16 @@ end
 #
 # Table name: reports
 #
-#  id         :integer          not null, primary key
-#  lat        :decimal(20, 17)  default(0.0)
-#  lng        :decimal(20, 17)  default(0.0)
-#  email      :string(255)
-#  seen_on    :date
-#  token      :string(255)
-#  hours      :string(255)
-#  confirmed  :boolean          default(FALSE), not null
-#  created_at :datetime
-#  updated_at :datetime
+#  id            :integer          not null, primary key
+#  lat           :decimal(20, 17)  default(0.0)
+#  lng           :decimal(20, 17)  default(0.0)
+#  email         :string(255)
+#  seen_on       :date
+#  token         :string(255)
+#  hours         :string(255)
+#  confirmed     :boolean          default(FALSE), not null
+#  created_at    :datetime
+#  updated_at    :datetime
+#  session_token :string(255)
 #
 

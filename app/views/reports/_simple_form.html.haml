@@ -1,0 +1,19 @@
+#stink_form
+  = form_for @report do |f|
+    = f.hidden_field :lat
+    = f.hidden_field :lng
+    %p
+      Kiedy?
+      %br/
+      = f.text_field :seen_on
+    %p
+      Godziny:
+      %br/
+      = f.select :hours, options_for_select(Report::HOURS)
+    %p
+      Email:
+      %br/
+      = f.text_field :email
+    %p
+      = submit_tag 'Zgłaszam'
+

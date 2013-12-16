@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'haml-rails'
 gem 'simple_form'
+#gem 'capistrano', '~> 3.0.1'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -43,9 +45,8 @@ end
 
 # Use Capistrano for deployment
 group :development do
-  gem 'capistrano'
-  gem 'capistrano-rails'
-  gem 'capistrano-bundler'
+  gem 'capistrano-rails', '~> 1.0.0'
+  #gem 'capistrano-bundler'
   #gem 'pp'
 end
 

@@ -1,4 +1,30 @@
 .grid_12
-  %h1 Zgłosznie ##{@report.id}
+  %h1 Zgłoszenie ##{@report.id}
+.grid_2
+  %p
+    Data:
+.grid_10
+  %p
+    = @report.seen_on.to_s
+.grid_2
+  %p
+    Godzina:
+.grid_10
+  %p
+    = @report.hours
+.grid_2
+  %p
+    Adres email
+.grid_10
+  %p
+    =@report.email
+    %br/
+    -if @report.confirmed?
+      %small
+        Raport potwierdzony
+    -else
+      %small
+        Na ten adres email przyjdzie email w którym potwierdzisz swoje zgłoszenie
+
 .grid_12
-  %p= @report.seen_on.to_s
+  = link_to 'Wróć do strony głównej','/'

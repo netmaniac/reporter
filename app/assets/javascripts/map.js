@@ -14,11 +14,15 @@ function initialize() {
     map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
 
+
+
     google.maps.event.addListener(map, 'click', function (event) {
+        lat = event.latLng.lat()
+        lng = event.latLng.lng();
+        alert('z click:' + lat + ", " + lng)
         placeMarker(event.latLng);
         load_content(marker, event.latLng)
     });
-
     var first = true;
     google.maps.event.addListener(map,'idle', function(){    navigator.geolocation.getCurrentPosition(function (pos) {
         if(!first) {return}
@@ -28,7 +32,7 @@ function initialize() {
         point = new google.maps.LatLng(lat,lng)
 //        alert('z GPS:' + lat + ", " + lng)
         map.panTo( point )
-        placeMarker(point.latLng)
+//        placeMarker(point.latLng)
 //        $("#lat").text (lat);
 //        $("#lng").text (lng);
     }, function(){ });
@@ -57,7 +61,7 @@ function load_content(marker, latLng) {
 
 
 function placeMarker(location) {
-    if (marker != null) return
+//    if (marker != null) return
     marker = new google.maps.Marker({
         position: location,
         draggable: true,

@@ -16,7 +16,18 @@ set :deploy_to, '/home/rails/reporter'
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 # set :keep_releases, 5
 
+
+
 namespace :deploy do
+
+  task :app_conf do
+    on roles(:web) do
+      within release_path do
+        execute " cp #{deploy_to}/shared/database.yml #{release_path}/config"
+        execute " cp #{deploy_to}/shared/secret.rb #{release_path}/config/initializers/secret_token.rb"
+      end
+    end
+  end
 
   desc 'Restart application'
   task :restart do
@@ -36,5 +47,6 @@ namespace :deploy do
   end
 
   after :finishing, 'deploy:cleanup'
+  before "deploy:restart", "deploy:app_conf"
 
 end
